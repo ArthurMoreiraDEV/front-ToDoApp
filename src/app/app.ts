@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { Tarefa } from './tarefa';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,14 +8,16 @@ import { HttpClient } from '@angular/common/http';
   standalone: false,
   styleUrl: './app.css',
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('TODOapp');
 
   arrayDeTarefas = signal<Tarefa[]>([]);
 
   apiURL: string = 'https://back-todoapp-hmc3.onrender.com';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {}
+  
+  ngOnInit(): void {
     this.READ_tarefa();
   }
 
