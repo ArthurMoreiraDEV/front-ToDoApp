@@ -13,7 +13,7 @@ export class App {
 
   arrayDeTarefas = signal<Tarefa[]>([]);
 
-  apiURL: string = 'https://apitarefasgui252862otav253525-25ph.onrender.com';
+  apiURL: string = 'https://back-todoapp-hmc3.onrender.com/';
 
   constructor(private http: HttpClient) {
     this.READ_tarefa();
